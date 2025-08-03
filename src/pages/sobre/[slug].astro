@@ -1,7 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import Wrapper from "@/components/Wrapper.astro";
+import { imageConfig } from "astro:assets";
 
 export async function getStaticPaths() {
     const sobres = await getCollection("sobres");
@@ -13,26 +15,36 @@ export async function getStaticPaths() {
 }
 
 const { sobre } = Astro.props;
-console.log(sobre);
 const { data } = sobre;
 const { title, author, img, description } = data;
 
-const { Content } = await render(sobre)
+const { Content } = await render(sobre);
+
+const imageFiles = await Astro.glob("@/assets/images/**/*");
 ---
 
 <Layout title={`${title} ┼ mai`}>
     <Wrapper className="flex-col lg:flex-row gap-10">
-        <aside class="flex-1">
-            <img
+        <aside class="flex-1 flex flex-col">
+            {
+                imageFiles.map((img) => (
+                    <Image
+                        src={img.default}
+                        alt="Photo of a pizza"
+                        class="mb-3 w-full rounded"
+                    />
+                ))
+            }
+            <!-- <img
                 src={`/src/assets/images/2017-03-11/${img}`}
                 alt={title}
                 class="rounded w-full h-auto object-contain"
-            />
+            /> -->
         </aside>
         <main class="flex-1 py-4">
             <h1 class="font-serif tracking-wide mb-6">{title}</h1>
             <div class="prose">
-                <Content/>
+                <Content />
             </div>
         </main>
     </Wrapper>
