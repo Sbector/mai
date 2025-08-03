@@ -1,10 +1,42 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "@/layouts/Layout.astro";
+import Wrapper from "@/components/Wrapper.astro"
+import { getCollection } from "astro:content";
+
+const sobres = await getCollection("sobres");
 ---
 
-<Layout title='home'>
-	<main>
-		<h1 class="">mai</h1>
-		<p>Archivo epistolar del mai</p>
-	</main>
+<Layout title="home">
+	<Wrapper className="justify-center">
+		<section aria-label="Sobres del mai">
+			<div class="px-4 mx-auto max-w-screen-xl">
+				<div class="grid gap-6 md:grid-cols-2">
+					{
+						sobres.map((sobre) => {
+							const { slug, data } = sobre;
+							const { title, author, img, description } = data;
+
+							return (
+								<article class="flex flex-col">
+									<a href={`/sobre/${slug}`} class="mb-2">
+										<img
+											src={`src/assets/images/2017-03-11/${img}`}
+											alt={title}
+											class="w-full rounded-lg transition hover:scale-105"
+										/>
+									</a>
+									<div class="flex flex-col justify-center">
+										<h3 class="font-serif tracking-wide">
+											{title}
+										</h3>
+										<p class="text-xs">{description}</p>
+									</div>
+								</article>
+							);
+						})
+					}
+				</div>
+			</div>
+		</section>
+	</Wrapper>
 </Layout>

@@ -1,1 +1,24 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import "@fontsource/geologica";
+@import "@fontsource/ultra";
+
+@theme {
+  --font-sans: 'Geologica', 'sans-serif';
+  --font-serif: 'Ultra', 'serif'
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
