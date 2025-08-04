@@ -4,6 +4,7 @@ import Wrapper from "@/components/Wrapper.astro"
 import { getCollection } from "astro:content";
 
 const epistolas = await getCollection("epistolas");
+console.log(epistolas)
 ---
 
 <Layout title="home">

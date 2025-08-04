@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 
 const { epistola } = Astro.props;
 const { data } = epistola;
-const { title, author, img, description } = data;
+const { title, author, date, img, description } = data;
 
 const { Content } = await render(epistola);
 
@@ -26,7 +26,7 @@ const imageFiles = await Astro.glob("@/assets/images/**/*");
 <Layout title={`${title} ┼ mai`}>
     <Wrapper className="flex-col lg:flex-row gap-10">
         <aside class="flex-1 flex flex-col">
-            {
+            <!-- {
                 imageFiles.map((img) => (
                     <Image
                         src={img.default}
@@ -34,15 +34,25 @@ const imageFiles = await Astro.glob("@/assets/images/**/*");
                         class="mb-3 w-full rounded"
                     />
                 ))
-            }
-            <!-- <img
-                src={`/src/assets/images/2017-03-11/${img}`}
+            } -->
+            <img
+                src={`/src/assets/images/epistola1/${img}`}
                 alt={title}
                 class="rounded w-full h-auto object-contain"
-            /> -->
+            />
         </aside>
         <main class="flex-1 py-4">
-            <h1 class="font-serif tracking-wide mb-6">{title}</h1>
+            <h1 class="font-serif tracking-wide mb-2">{title}</h1>
+            <p class="text-xs mb-6">
+                <time datetime={date?.toISOString()}
+                    >{
+                        date?.toLocaleDateString("es", {
+                            dateStyle: "medium",
+                            timeZone: "UTC",
+                        })
+                    }</time
+                >
+            </p>
             <div class="prose">
                 <Content />
             </div>

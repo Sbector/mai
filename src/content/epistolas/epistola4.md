@@ -1,8 +1,10 @@
 ---
 title: Cuarta epistola
 author: mai
+date: 2016-04-04
 img: 2B.webp
 description: Segunda carta documentada y publicada
+relatedEpistolas: ["epistola2"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dictum nunc ullamcorper iaculis tincidunt. Cras vel dolor enim. Donec quis tellus nec turpis dapibus molestie vel nec quam. Aenean auctor gravida sem, a vehicula enim pellentesque sed. In et nunc mauris. Curabitur sodales gravida leo, ac sollicitudin dui mollis ac. **Nunc hendrerit, risus pretium egestas auctor**, lectus est convallis lectus, nec venenatis sapien nulla ut nulla. Nulla commodo libero diam, a placerat dolor sodales vel. Nulla facilisi. Aliquam lacinia in velit ut vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam sed nibh vel nulla mollis finibus vel eu odio. Curabitur ex mi, tempus sed justo at, semper ultrices sapien.
