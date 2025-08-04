@@ -1,7 +1,7 @@
 ---
-title: Primer sobre
+title: Primera epistola
 author: mai
-img: 1A.webp
+img: 1B.webp
 description: Primera carta documentada y publicada
 ---
 

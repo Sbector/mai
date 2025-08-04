@@ -6,19 +6,19 @@ import Wrapper from "@/components/Wrapper.astro";
 import { imageConfig } from "astro:assets";
 
 export async function getStaticPaths() {
-    const sobres = await getCollection("sobres");
+    const epistolas = await getCollection("epistolas");
 
-    return sobres.map((sobre) => ({
-        params: { slug: sobre.slug },
-        props: { sobre },
+    return epistolas.map((epistola) => ({
+        params: { slug: epistola.slug },
+        props: { epistola },
     }));
 }
 
-const { sobre } = Astro.props;
-const { data } = sobre;
+const { epistola } = Astro.props;
+const { data } = epistola;
 const { title, author, img, description } = data;
 
-const { Content } = await render(sobre);
+const { Content } = await render(epistola);
 
 const imageFiles = await Astro.glob("@/assets/images/**/*");
 ---

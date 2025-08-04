@@ -3,24 +3,24 @@ import Layout from "@/layouts/Layout.astro";
 import Wrapper from "@/components/Wrapper.astro"
 import { getCollection } from "astro:content";
 
-const sobres = await getCollection("sobres");
+const epistolas = await getCollection("epistolas");
 ---
 
 <Layout title="home">
 	<Wrapper className="justify-center">
-		<section aria-label="Sobres del mai">
+		<section aria-label="epistolas del mai">
 			<div class="px-4 mx-auto max-w-screen-xl">
 				<div class="grid gap-6 md:grid-cols-2">
 					{
-						sobres.map((sobre) => {
-							const { slug, data } = sobre;
+						epistolas.map((epistola) => {
+							const { slug, data } = epistola;
 							const { title, author, img, description } = data;
 
 							return (
 								<article class="flex flex-col">
-									<a href={`/sobre/${slug}`} class="mb-2">
+									<a href={`/epistola/${slug}`} class="mb-2">
 										<img
-											src={`src/assets/images/2017-03-11/${img}`}
+											src={`src/assets/images/epistola1/${img}`}
 											alt={title}
 											class="w-full rounded-lg transition hover:scale-105"
 										/>

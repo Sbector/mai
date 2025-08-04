@@ -1,5 +1,5 @@
 ---
-title: Cuarto sobre
+title: Segunda epistola
 author: mai
 img: 2A.webp
 description: Segunda carta documentada y publicada

@@ -1,6 +1,6 @@
 import { defineCollection, z } from "astro:content"
 
-const sobres = defineCollection({
+const epistolas = defineCollection({
     schema: z.object({
         title: z.string(),
         author: z.string(),
@@ -9,4 +9,4 @@ const sobres = defineCollection({
     })
 })
 
-export const collections = {sobres}
+export const collections = {epistolas}
