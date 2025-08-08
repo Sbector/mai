@@ -1,0 +1,13 @@
+[
+    {
+        "id": "epistola1",
+        "title": "Epistola 1",
+        "description": "blablabl",
+        "imageRoutes": [
+            "../assets/imageCollections/epistola1/1A.webp",
+            "../assets/imageCollections/epistola1/1B.webp",
+            "../assets/imageCollections/epistola1/2A.webp",
+            "../assets/imageCollections/epistola1/2b.webp"
+        ]
+    }
+]

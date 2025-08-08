@@ -1,7 +1,7 @@
 ---
-title: "My epistola"
-cover: ["./epistola1/1A.webp", "./epistola1/1B.webp", "./epistola1/2A.webp", "./epistola1/2B.webp"]
-coverAlt: "A photograph of a sunset behind a mountain range."
+title: "Mi primera epistola"
+description: Esta es la descripción de mi primera epistola
+imageCollection: "epistola1"
 ---
 
 Primer sobre escaneado y documentado.
