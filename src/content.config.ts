@@ -7,17 +7,21 @@ const epistolas = defineCollection({
         z.object({
             title: z.string(),
             description: z.string(),
-            imageCollection: reference("imageCollections").optional()
+            itemCollection: reference("itemCollections")
         }),
 });
 
-const imageCollections = defineCollection({
-    loader: file("./src/data/imageCollections.json"),
+const itemCollections = defineCollection({
+    loader: file("./src/data/itemCollections.json"),
     schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
-        imageRoutes: z.array(image()),
+        images: z.array(z.object({
+            title: z.string(),
+            description: z.string(),
+            imageRoute: image(),
+        })),
     })
 })
 
-export const collections = { epistolas, imageCollections }
+export const collections = { epistolas, itemCollections }

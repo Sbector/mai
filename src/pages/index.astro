@@ -1,51 +1,59 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Wrapper from "@/components/Wrapper.astro";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
+// 1️⃣ Cargar TODO de golpe
 const epistolas = await getCollection("epistolas");
+const itemCollections = await getCollection("itemCollections");
 
-// Cargar epístolas con sus colecciones de imágenes
-const epistolasConColeccion = await Promise.all(
-  epistolas.map(async (epistola) => {
-    let collectionData = null;
-    if (epistola.data.imageCollection) {
-      const { collection, id } = epistola.data.imageCollection;
-      collectionData = await getEntry(collection, id);
-    }
-    return {
-      ...epistola,
-      collectionData,
-    };
-  })
-);
+// 2️⃣ Vincular cada epístola con su colección (si la tiene)
+const epistolasWithCollections = epistolas.map((epistola) => {
+	const { id } = epistola;
+	const collectionData = epistola.data.itemCollection
+		? itemCollections.find(
+				(col) =>
+					col.collection ===
+						epistola.data.itemCollection.collection &&
+					col.id === epistola.data.itemCollection.id,
+			)
+		: null;
+
+	return { ...epistola, id, collectionData };
+});
 ---
 
-<Layout title="Epístolas">
-  <Wrapper className="justify-center">
-    <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {epistolasConColeccion.map(({ data, collectionData }) => (
-        <article class="p-4">
-          <h2 class="text-xl font-bold">{data.title}</h2>
-          <p class="mb-2">{data.description}</p>
-          {collectionData && (
-            <>
-              <p class="text-sm text-gray-600 mb-2">{collectionData.data.title}</p>
-              <div class="grid grid-cols-2 gap-2">
-                {collectionData.data.imageRoutes.map((img) => (
-                  <Image
-                    src={img}
-                    alt={data.title}
-                    width={300}
-                    class="rounded"
-                  />
-                ))}
-              </div>
-            </>
-          )}
-        </article>
-      ))}
-    </section>
-  </Wrapper>
+<Layout title="home">
+	<Wrapper className="justify-center">
+		<section class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+			{
+				epistolasWithCollections.map(
+					({ data, id, collectionData }) => (
+						<div class="p-4">
+							<a href={`/epistola/${id}`}>
+								<h1 class="text-lg font-bold pb-4">{data.title}</h1>
+							</a>
+							<p>{data.description}</p>
+
+							{collectionData && (
+								<div class="mt-4 space-y-4">
+									{collectionData.data.images.map((item) => (
+										<div class="text-center">
+											<h2>{item.title}</h2>
+											<Image
+												src={item.imageRoute}
+												alt={item.title}
+											/>
+											<p>{item.description}</p>
+										</div>
+									))}
+								</div>
+							)}
+						</div>
+					),
+				)
+			}
+		</section>
+	</Wrapper>
 </Layout>
