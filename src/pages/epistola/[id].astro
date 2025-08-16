@@ -32,18 +32,23 @@ const { epistola, collectionData } = Astro.props;
 <Layout title={epistola.data.title}>
   {
     collectionData && (
-      <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 py-4 px-6">
-        <div class="sticky z-50 top-12 px-1 py-0.5 text-cyan-600">
+      <section class="py-4 px-6">
+        <div
+          class="sticky top-12 z-50 px-1 py-0.5
+         rounded text-cyan-600"
+        >
           <h1>{epistola.data.title}</h1>
           <p>{epistola.data.description}</p>
         </div>
-        {collectionData.data.images.map((item) => (
-          <div class="text-center">
-            <h2>{item.title}</h2>
-            <Image src={item.imageRoute} alt={item.title} />
-            <p>{item.description}</p>
-          </div>
-        ))}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-start space-y-10 md:space-y-0 md:space-x-10">
+          {collectionData.data.images.map((item) => (
+            <div>
+              <h2>{item.title}</h2>
+              <Image src={item.imageRoute} alt={item.title} />
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
     )
   }
