@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+
+const { id, data } = Astro.props;
+---
+
+<div class="relative h-120">
+    <a href={`/epistola/${id}`}>
+        <Image
+            src={data.cover}
+            alt={data.coverAlt}
+            class="h-full w-full object-cover"
+        />
+        <div
+            class="absolute
+                    top-0 md:top-auto md:bottom-0
+                    right-0
+                    px-1 py-0.5
+                    rounded
+                    bg-cyan-600/80 text-white"
+        >
+            <h1 class="text-sm font-semibold">{data.title}</h1>
+        </div>
+    </a>
+</div>

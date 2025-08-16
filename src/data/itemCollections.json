@@ -13,6 +13,16 @@
                 "title": "1B",
                 "description": "Este es el reverso de mi primera imagen",
                 "imageRoute": "../assets/imageCollections/epistola1/1B.webp"
+            },
+            {
+                "title": "1A",
+                "description": "Esta es la descripción de mi primera imagen",
+                "imageRoute": "../assets/imageCollections/epistola1/2A.webp"
+            },
+            {
+                "title": "1B",
+                "description": "Este es el reverso de mi primera imagen",
+                "imageRoute": "../assets/imageCollections/epistola1/2B.webp"
             }
         ]
     },
@@ -21,6 +31,16 @@
         "title": "Epistola 2",
         "description": "Imágenes escaneadas de la epístola 2",
         "images": [
+            {
+                "title": "1A",
+                "description": "Esta es la descripción de mi primera imagen",
+                "imageRoute": "../assets/imageCollections/epistola1/1A.webp"
+            },
+            {
+                "title": "1B",
+                "description": "Este es el reverso de mi primera imagen",
+                "imageRoute": "../assets/imageCollections/epistola1/1B.webp"
+            },
             {
                 "title": "1A",
                 "description": "Esta es la descripción de mi primera imagen",
