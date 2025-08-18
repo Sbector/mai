@@ -1,55 +1,88 @@
 [
     {
-        "id": "epistola1",
-        "title": "Epistola 1",
+        "id": "2016-12-04",
+        "title": "2016-12-04",
+        "description": "",
+        "images": [
+            {
+                "title": "",
+                "description": "",
+                "imageRoute": "../assets/itemCollections/2016-12-04/cover.png"
+            }
+        ]
+    },
+    {
+        "id": "2016-12-09",
+        "title": "2016-12-09",
+        "description": "",
+        "images": [
+            {
+                "title": "",
+                "description": "",
+                "imageRoute": "../assets/itemCollections/2016-12-09/cover.png"
+            }
+        ]
+    },
+    {
+        "id": "2016-12-21",
+        "title": "2016-12-21",
+        "description": "",
+        "images": [
+            {
+                "title": "",
+                "description": "",
+                "imageRoute": "../assets/itemCollections/2016-12-21/cover.png"
+            }
+        ]
+    },
+    {
+        "id": "2017-03-11",
+        "title": "2017-03-11",
         "description": "Imágenes escaneadas de la epístola 1",
         "images": [
             {
                 "title": "1A",
                 "description": "Esta es la descripción de mi primera imagen",
-                "imageRoute": "../assets/imageCollections/epistola1/1A.webp"
+                "imageRoute": "../assets/itemCollections/2017-03-11/1A.webp"
             },
             {
                 "title": "1B",
                 "description": "Este es el reverso de mi primera imagen",
-                "imageRoute": "../assets/imageCollections/epistola1/1B.webp"
+                "imageRoute": "../assets/itemCollections/2017-03-11/1B.webp"
             },
             {
                 "title": "1A",
                 "description": "Esta es la descripción de mi primera imagen",
-                "imageRoute": "../assets/imageCollections/epistola1/2A.webp"
+                "imageRoute": "../assets/itemCollections/2017-03-11/2A.webp"
             },
             {
                 "title": "1B",
                 "description": "Este es el reverso de mi primera imagen",
-                "imageRoute": "../assets/imageCollections/epistola1/2B.webp"
+                "imageRoute": "../assets/itemCollections/2017-03-11/2B.webp"
             }
         ]
     },
     {
-        "id": "epistola2",
-        "title": "Epistola 2",
-        "description": "Imágenes escaneadas de la epístola 2",
+        "id": "2017-05-21",
+        "title": "2017-05-21",
+        "description": "",
         "images": [
             {
-                "title": "1A",
-                "description": "Esta es la descripción de mi primera imagen",
-                "imageRoute": "../assets/imageCollections/epistola1/1A.webp"
-            },
+                "title": "",
+                "description": "",
+                "imageRoute": "../assets/itemCollections/2017-05-21/cover.png"
+            }
+        ]
+    },
+    {
+        "id": "2017-05-29",
+        "title": "2017-05-29",
+        "description": "",
+        "images": [
             {
-                "title": "1B",
-                "description": "Este es el reverso de mi primera imagen",
-                "imageRoute": "../assets/imageCollections/epistola1/1B.webp"
-            },
-            {
-                "title": "1A",
-                "description": "Esta es la descripción de mi primera imagen",
-                "imageRoute": "../assets/imageCollections/epistola1/2A.webp"
-            },
-            {
-                "title": "1B",
-                "description": "Este es el reverso de mi primera imagen",
-                "imageRoute": "../assets/imageCollections/epistola1/2B.webp"
+                "title": "",
+                "description": "",
+                "imageRoute": "../assets/itemCollections/2017-05-29/cover.png"
             }
         ]
     }
