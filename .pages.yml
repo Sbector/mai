@@ -1,0 +1,50 @@
+media_folder: "public"
+public_folder: "/"
+
+collections:
+  - name: "epistolas"
+    label: "Epístolas"
+    folder: "src/data/epistolas"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    extension: "md"
+
+    fields:
+      - { name: "title", label: "Título", widget: "string" }
+      - { name: "description", label: "Descripción", widget: "text", required: false }
+      - { name: "date", label: "Fecha", widget: "datetime" }
+
+      - name: "cover"
+        label: "Portada"
+        widget: "image"
+        required: true
+
+      - name: "coverAlt"
+        label: "Texto alternativo"
+        widget: "string"
+
+      - name: "itemCollection"
+        label: "Colección visual"
+        widget: "relation"
+        collection: "itemCollections"
+        search_fields: ["title"]
+        value_field: "id"
+        display_fields: ["title"]
+        required: false
+
+  - name: "itemCollections"
+    label: "Colecciones visuales"
+    file: "src/data/itemCollections.json"
+
+    fields:
+      - { name: "title", label: "Título", widget: "string" }
+      - { name: "description", label: "Descripción", widget: "text" }
+
+      - name: "images"
+        label: "Imágenes"
+        widget: "list"
+        fields:
+          - { name: "title", label: "Título", widget: "string" }
+          - { name: "description", label: "Descripción", widget: "text", required: false }
+          - { name: "imageRoute", label: "Imagen", widget: "image" }
