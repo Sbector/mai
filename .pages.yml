@@ -1,50 +1,71 @@
-media_folder: "public"
-public_folder: "/"
+media:
+  input: public
+  output: /
 
-collections:
-  - name: "epistolas"
-    label: "Epístolas"
-    folder: "src/data/epistolas"
-    create: true
-    slug: "{{slug}}"
-    format: "frontmatter"
-    extension: "md"
+content:
+  - name: epistolas
+    label: Epístolas
+    type: collection
+    path: src/data/epistolas
+    format: yaml-frontmatter
 
     fields:
-      - { name: "title", label: "Título", widget: "string" }
-      - { name: "description", label: "Descripción", widget: "text", required: false }
-      - { name: "date", label: "Fecha", widget: "datetime" }
+      - name: title
+        label: Título
+        type: string
 
-      - name: "cover"
-        label: "Portada"
-        widget: "image"
-        required: true
-
-      - name: "coverAlt"
-        label: "Texto alternativo"
-        widget: "string"
-
-      - name: "itemCollection"
-        label: "Colección visual"
-        widget: "relation"
-        collection: "itemCollections"
-        search_fields: ["title"]
-        value_field: "id"
-        display_fields: ["title"]
+      - name: description
+        label: Descripción
+        type: text
         required: false
 
-  - name: "itemCollections"
-    label: "Colecciones visuales"
-    file: "src/data/itemCollections.json"
+      - name: date
+        label: Fecha
+        type: date
+
+      - name: cover
+        label: Portada
+        type: image
+
+      - name: coverAlt
+        label: Texto alternativo
+        type: string
+
+      - name: itemCollection
+        label: Colección visual
+        type: string
+        required: false
+        description: >
+          ID de la colección visual (ej. 2017-03-11)
+
+  - name: itemCollections
+    label: Colecciones visuales
+    type: file
+    path: src/data/itemCollections.json
+    format: json
 
     fields:
-      - { name: "title", label: "Título", widget: "string" }
-      - { name: "description", label: "Descripción", widget: "text" }
+      - name: title
+        label: Título
+        type: string
 
-      - name: "images"
-        label: "Imágenes"
-        widget: "list"
+      - name: description
+        label: Descripción
+        type: text
+
+      - name: images
+        label: Imágenes
+        type: list
         fields:
-          - { name: "title", label: "Título", widget: "string" }
-          - { name: "description", label: "Descripción", widget: "text", required: false }
-          - { name: "imageRoute", label: "Imagen", widget: "image" }
+          - name: title
+            label: Título
+            type: string
+
+          - name: description
+            label: Descripción
+            type: text
+            required: false
+
+          - name: imageRoute
+            label: Imagen
+            type: image
