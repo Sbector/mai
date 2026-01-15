@@ -26,6 +26,7 @@ content:
       - name: cover
         label: Portada
         type: image
+        required: true
 
       - name: coverAlt
         label: Texto alternativo
@@ -35,8 +36,7 @@ content:
         label: Colección visual
         type: string
         required: false
-        description: >
-          ID de la colección visual (ej. 2017-03-11)
+        description: ID de la colección visual (ej. 2017-03-11)
 
   - name: itemCollections
     label: Colecciones visuales
@@ -55,17 +55,5 @@ content:
 
       - name: images
         label: Imágenes
-        type: list
-        fields:
-          - name: title
-            label: Título
-            type: string
-
-          - name: description
-            label: Descripción
-            type: text
-            required: false
-
-          - name: imageRoute
-            label: Imagen
-            type: image
+        type: image
+        list: true
