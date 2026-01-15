@@ -54,6 +54,18 @@ content:
         type: text
 
       - name: images
-        label: Imágenes
-        type: image
+        label: Elementos
+        type: object
         list: true
+        fields:
+          - name: title
+            label: Título
+            type: string
+
+          - name: description
+            label: Descripción
+            type: text
+
+          - name: imageRoute
+            label: Imagen
+            type: image
