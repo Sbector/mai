@@ -1,0 +1,59 @@
+media:
+  input: public
+  output: /
+
+content:
+  - name: epistolas
+    label: Epístolas
+    type: collection
+    path: src/data/epistolas
+    format: yaml-frontmatter
+
+    fields:
+      - name: title
+        label: Título
+        type: string
+
+      - name: description
+        label: Descripción
+        type: text
+        required: false
+
+      - name: date
+        label: Fecha
+        type: date
+
+      - name: cover
+        label: Portada
+        type: image
+        required: true
+
+      - name: coverAlt
+        label: Texto alternativo
+        type: string
+
+      - name: itemCollection
+        label: Colección visual
+        type: string
+        required: false
+        description: ID de la colección visual (ej. 2017-03-11)
+
+  - name: itemCollections
+    label: Colecciones visuales
+    type: file
+    path: src/data/itemCollections.json
+    format: json
+
+    fields:
+      - name: title
+        label: Título
+        type: string
+
+      - name: description
+        label: Descripción
+        type: text
+
+      - name: images
+        label: Imágenes
+        type: image
+        list: true
