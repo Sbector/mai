@@ -7,7 +7,7 @@
             {
                 "title": "",
                 "description": "",
-                "imageRoute": "../assets/itemCollections/2016-12-04/cover.png"
+                "imageRoute": "/itemCollections/2016-12-04/cover.png"
             }
         ]
     },
@@ -19,7 +19,7 @@
             {
                 "title": "",
                 "description": "",
-                "imageRoute": "../assets/itemCollections/2016-12-09/cover.png"
+                "imageRoute": "/itemCollections/2016-12-09/cover.png"
             }
         ]
     },
@@ -31,7 +31,7 @@
             {
                 "title": "",
                 "description": "",
-                "imageRoute": "../assets/itemCollections/2016-12-21/cover.png"
+                "imageRoute": "/itemCollections/2016-12-21/cover.png"
             }
         ]
     },
@@ -43,22 +43,22 @@
             {
                 "title": "1A",
                 "description": "Esta es la descripción de mi primera imagen",
-                "imageRoute": "../assets/itemCollections/2017-03-11/1A.webp"
+                "imageRoute": "/itemCollections/2017-03-11/1A.webp"
             },
             {
                 "title": "1B",
                 "description": "Este es el reverso de mi primera imagen",
-                "imageRoute": "../assets/itemCollections/2017-03-11/1B.webp"
+                "imageRoute": "/itemCollections/2017-03-11/1B.webp"
             },
             {
                 "title": "1A",
                 "description": "Esta es la descripción de mi primera imagen",
-                "imageRoute": "../assets/itemCollections/2017-03-11/2A.webp"
+                "imageRoute": "/itemCollections/2017-03-11/2A.webp"
             },
             {
                 "title": "1B",
                 "description": "Este es el reverso de mi primera imagen",
-                "imageRoute": "../assets/itemCollections/2017-03-11/2B.webp"
+                "imageRoute": "/itemCollections/2017-03-11/2B.webp"
             }
         ]
     },
@@ -70,7 +70,7 @@
             {
                 "title": "",
                 "description": "",
-                "imageRoute": "../assets/itemCollections/2017-05-21/cover.png"
+                "imageRoute": "/itemCollections/2017-05-21/cover.png"
             }
         ]
     },
@@ -82,7 +82,7 @@
             {
                 "title": "",
                 "description": "",
-                "imageRoute": "../assets/itemCollections/2017-05-29/cover.png"
+                "imageRoute": "/itemCollections/2017-05-29/cover.png"
             }
         ]
     }
